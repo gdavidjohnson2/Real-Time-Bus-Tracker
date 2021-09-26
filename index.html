@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Bus Tracking</title>
+		<meta
+			name="viewport"
+			content="initial-scale=1,maximum-scale=1,user-scalable=no"
+		/>
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+		<link
+			href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<div id="map"></div>
+
+		<div class="map-overlay top">
+			<div id="updateStatus" style="display: inline-block; color: black">
+				Updating
+			</div>
+			<div id="runto" style="display: inline-block">count of final Count</div>
+			<label
+				><input
+					type="checkbox"
+					name="run with no limit"
+					id="infinite"
+					onclick="checkInfinite()"
+				/>
+				Run with no limiting count</label
+			>
+		</div>
+		<script>
+			//access token
+ 		    mapboxgl.accessToken = "ENTER YOUR MAPBOX TOKER HERE"	
+
+			var map = new mapboxgl.Map({
+				container: "map",
+				//style: "mapbox://styles/mapbox/streets-v11",
+				style: "mapbox://styles/mapbox/dark-v10",
+				center: [-71.0909934139761, 42.34974377275245],
+				zoom: 13.394351247727437,
+			});
+			map.addControl(new mapboxgl.FullscreenControl());
+		</script>
+		<script>
+	
+			
+		</script>
+		<script src="./mapanimation.js"></script>
+		<script>
+			run(); //opens the page and begins the fetch/run
+		</script>
+	</body>
+</html>
